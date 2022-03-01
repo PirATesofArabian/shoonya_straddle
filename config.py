@@ -1,0 +1,6 @@
+username        = ''
+pwd          = ''
+factor2     = '' 
+vc          = ''
+app_key     = ''
+imei        = ''
