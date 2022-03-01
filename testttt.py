@@ -49,7 +49,7 @@ s=False
 data={}
 while True:
 	try:
-		if str(dt.now().strftime('%X'))>str(datetime.time(10,58,58)):	
+		if str(dt.now().strftime('%X'))>str(datetime.time(10,58,58)):	#change the time as per your requirments
 			try:
 				data[name]
 			except:
