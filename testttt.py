@@ -45,7 +45,7 @@ fut='Nifty Bank'
 name=f'NSE:{fut}'
 
 #make it to true if you want to put live orders in account
-#otherwise you can keep it to False , it will work like paper trade 
+#otherwise you can keep it to False , it will just print the update 
 
 live_trading=True
 lot=1
