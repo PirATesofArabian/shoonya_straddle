@@ -18,34 +18,27 @@ headers = {
 indices=['BANKNIFTY','NIFTY']
 
 
-def nsesymbolpurify(symbol):
-    symbol = symbol.replace('&','%26') #URL Parse for Stocks Like M&M Finance
-    return symbol
-
-def nsefetch(payload):
+def fetch(payload):
         try:
             output = requests.get(payload,headers=headers).json()
-            #print(output)
         except ValueError:
             s =requests.Session()
             output = s.get("http://nseindia.com",headers=headers)
             output = s.get(payload,headers=headers).json()
         return output
 
-def nse_optionchain_scrapper(symbol):
-    symbol = nsesymbolpurify(symbol)
-    if any(x in symbol for x in indices):
-        payload = nsefetch('https://www.nseindia.com/api/option-chain-indices?symbol='+symbol)
-    else:
-        payload = nsefetch('https://www.nseindia.com/api/option-chain-equities?symbol='+symbol)
+def scrap(symbol):
+    payload = fetch('https://www.nseindia.com/api/option-chain-indices?symbol='+symbol)
     return payload
 
-def expiry_list(symbol):
-    payload = nse_optionchain_scrapper(symbol)
+def listt(symbol):
+    payload = scrap(symbol)
     payload = pd.DataFrame({'Date':payload['records']['expiryDates']})
     return payload
 
 def present():
-    present_exp=str(expiry_list("BANKNIFTY")['Date'][0])
+    present_exp=str(listt("BANKNIFTY")['Date'][0])
     present_exp=present_exp.replace("-","").upper()
     return present_exp
+
+print(f"The current expiry is {present_exp}")
