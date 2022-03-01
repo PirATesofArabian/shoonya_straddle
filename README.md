@@ -1,7 +1,7 @@
 # shoonya_straddle
 
 *NOTE: I am not responsible for the profit or loss you make it stock market . use this at your own risk*
-
+<br /> check If you have all the packages installed , otherwise install the respective packages <br />
 This repository contains the sample code for running straddle in with Finvasia shoonya Api <br />
 I am using a method where once the Login fucntion is called , we can store the token and use it to start another session< By using the default method we can't do this <br />
 When you run a two or more files simultaneously only the latest will be active others gets stopped<br />
