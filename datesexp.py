@@ -41,4 +41,4 @@ def present():
     present_exp=present_exp.replace("-","").upper()
     return present_exp
 
-print(f"The current expiry is {present_exp}")
+print(f"The current expiry is {present()}")
