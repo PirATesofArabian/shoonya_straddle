@@ -1,3 +1,7 @@
+#Use at your own risk , I am not responsible for any or your profit or Loss in stock market
+#telegram_id = https://t.me/Atwoz029lengthis8
+#shoonya_api telegram group= https://t.me/shoonyaapi
+
 import datetime
 from datetime import date
 import pandas as pd 
@@ -49,7 +53,7 @@ s=False
 data={}
 while True:
 	try:
-		if str(dt.now().strftime('%X'))>str(datetime.time(10,58,58)):	#change the time as per your requirments
+		if str(dt.now().strftime('%X'))>str(datetime.time(10,58,58)):	
 			try:
 				data[name]
 			except:
@@ -70,7 +74,7 @@ while True:
 			data[name]['Entry']=True
 			data[name]['Entryprice_ce']=ce_ltp
 			data[name]['Entryprice_pe']=pe_ltp
-			
+
 		 	#change the stoploss for ce leg accordingly 
 		 	#change the stoplosss for pe leg accordingly
 		 	#here i have used 30% as sl
